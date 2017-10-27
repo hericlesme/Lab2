@@ -15,13 +15,19 @@ public class Disciplina {
 	public Disciplina(String nomeDisciplina) {
 		this.disciplina = nomeDisciplina;
 		this.horas = 0;
-		this.notas = new double[numNotas];
+		this.notas = new double[4];
 	}
-
+	
+	public Disciplina(String nomeDisciplina, int nNotas) {
+		this.disciplina = nomeDisciplina;
+		this.numNotas = nNotas;
+		this.notas = new double[nNotas];
+	}
 	public Disciplina(String nomeDisciplina, int nNotas, int[] pesos) {
 		this.disciplina = nomeDisciplina;
 		this.numNotas = nNotas;
 		this.pesos = pesos;	
+		this.notas = new double[nNotas];
 	}
 
 	// Métodos
