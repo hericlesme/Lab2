@@ -7,7 +7,7 @@ public class Disciplina {
 	private String disciplina;
 	private int horas;
 	private double[] notas;
-	private int numNotas = 4;
+	private int numNotas;
 	private int[] pesos;
 	
 	// Construtores
@@ -16,14 +16,21 @@ public class Disciplina {
 		this.disciplina = nomeDisciplina;
 		this.horas = 0;
 		this.notas = new double[4];
+		this.pesos = new int[] {1,1,1,1};
 	}
 	
 	public Disciplina(String nomeDisciplina, int nNotas) {
 		this.disciplina = nomeDisciplina;
 		this.numNotas = nNotas;
 		this.notas = new double[nNotas];
+		this.pesos = new int[nNotas];
+		
+		for (int i = 0; i < nNotas; i++) {
+			pesos[i] = 1;
+		}
 	}
-	public Disciplina(String nomeDisciplina, int nNotas, int[] pesos) {
+	
+public Disciplina(String nomeDisciplina, int nNotas, int[] pesos) {
 		this.disciplina = nomeDisciplina;
 		this.numNotas = nNotas;
 		this.pesos = pesos;	
@@ -32,24 +39,18 @@ public class Disciplina {
 
 	// Métodos
 
-	private double mediaNotas(double[] notas) {
+	public double mediaNotas(double[] notas, int[] pesos) {
 		double soma = 0;
-		if (pesos != null){
 			for (int i = 0; i < numNotas; i++) {
-				soma += i * pesos[i];
+				soma += notas[i] * pesos[i];
 				}
-			return soma / somaLista(pesos);
-		} else {
-			for (double i : notas) {
-				soma += i;
-			}
-		}
-		return soma / numNotas;
+			return soma/somaPesos(pesos);
+	
 	}
 
-	public double somaLista(int[] lista) {
+	public double somaPesos(int[] pesos) {
 		int soma = 0;
-		for (int i : lista) {
+		for (int i : pesos) {
 			soma += i;
 		}
 		return soma;
@@ -66,7 +67,7 @@ public class Disciplina {
 	}
 
 	public boolean aprovado() {
-		if (mediaNotas(notas) >= 7.0) {
+		if (mediaNotas(notas, pesos) >= 7.0) {
 			return true;
 		}
 		return false;
@@ -74,6 +75,6 @@ public class Disciplina {
 
 	@Override
 	public String toString() {
-		return (this.disciplina + " " + this.horas + " " + mediaNotas(notas) + " " + Arrays.toString(notas));
+		return (this.disciplina + " " + this.horas + " " + mediaNotas(notas, pesos) + " " + Arrays.toString(notas));
 	}
 }
