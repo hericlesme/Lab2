@@ -4,7 +4,7 @@ public class Disciplina {
 
 	// Atributos
 
-	private String disciplina;
+	private String nomeDisciplina;
 	private int horas;
 	private double[] notas;
 	private int numNotas;
@@ -17,7 +17,7 @@ public class Disciplina {
 	}
 
 	public Disciplina(String nomeDisciplina, int nNotas) {
-		this.disciplina = nomeDisciplina;
+		this.nomeDisciplina = nomeDisciplina;
 		this.numNotas = nNotas;
 		this.notas = new double[nNotas];
 		this.pesos = this.retornaPesos(nNotas);
@@ -25,7 +25,7 @@ public class Disciplina {
 	}
 
 	public Disciplina(String nomeDisciplina, int nNotas, int[] pesos) {
-		this.disciplina = nomeDisciplina;
+		this.nomeDisciplina = nomeDisciplina;
 		this.numNotas = nNotas;
 		this.pesos = pesos;
 		this.notas = new double[nNotas];
@@ -66,10 +66,14 @@ public class Disciplina {
 		}
 		return false;
 	}
+	
+	public String getDisc() {
+		return (nomeDisciplina);
+	}
 
 	@Override
 	public String toString() {
-		return (this.disciplina + " " + this.horas + " " + mediaNotas(notas, pesos) + " " + Arrays.toString(notas));
+		return (this.nomeDisciplina + " " + this.horas + " " + mediaNotas(notas, pesos) + " " + Arrays.toString(notas));
 	}
 
 	private int[] retornaPesos(int nNotas) {

@@ -35,6 +35,10 @@ public class ContaLaboratorio {
 		}
 		return false;
 	}
+	
+	public String getLab() {
+		return nomeDoLaboratorio;
+	}
 
 	@Override
 	public String toString() {

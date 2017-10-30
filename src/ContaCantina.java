@@ -23,6 +23,11 @@ public class ContaCantina {
 		adicionaDesc(detalhes);
 	}
 	
+	public void cadastraLanche(int qtdItens, int valorCentavos) {
+		this.qntLanche += qtdItens;
+		this.debito += valorCentavos;
+	}
+	
 	public void adicionaDesc(String detalhes) {
 		descricoes[this.counter] = detalhes;
 		this.counter++;
@@ -41,6 +46,10 @@ public class ContaCantina {
 			list += "⟩ " + i + " ⟨";
 		}
 		return list;
+	}
+	
+	public String getCantina() {
+		return nomeCantina;
 	}
 
 	@Override
