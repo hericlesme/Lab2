@@ -9,31 +9,25 @@ public class Disciplina {
 	private double[] notas;
 	private int numNotas;
 	private int[] pesos;
-	
+
 	// Construtores
 
 	public Disciplina(String nomeDisciplina) {
-		this.disciplina = nomeDisciplina;
-		this.horas = 0;
-		this.notas = new double[4];
-		this.pesos = new int[] {1,1,1,1};
+		this(nomeDisciplina, 4);
 	}
-	
+
 	public Disciplina(String nomeDisciplina, int nNotas) {
 		this.disciplina = nomeDisciplina;
 		this.numNotas = nNotas;
 		this.notas = new double[nNotas];
-		this.pesos = new int[nNotas];
+		this.pesos = this.retornaPesos(nNotas);
 		
-		for (int i = 0; i < nNotas; i++) {
-			pesos[i] = 1;
-		}
 	}
-	
-public Disciplina(String nomeDisciplina, int nNotas, int[] pesos) {
+
+	public Disciplina(String nomeDisciplina, int nNotas, int[] pesos) {
 		this.disciplina = nomeDisciplina;
 		this.numNotas = nNotas;
-		this.pesos = pesos;	
+		this.pesos = pesos;
 		this.notas = new double[nNotas];
 	}
 
@@ -41,11 +35,11 @@ public Disciplina(String nomeDisciplina, int nNotas, int[] pesos) {
 
 	public double mediaNotas(double[] notas, int[] pesos) {
 		double soma = 0;
-			for (int i = 0; i < numNotas; i++) {
-				soma += notas[i] * pesos[i];
-				}
-			return soma/somaPesos(pesos);
-	
+		for (int i = 0; i < numNotas; i++) {
+			soma += notas[i] * pesos[i];
+		}
+		return soma / somaPesos(pesos);
+
 	}
 
 	public double somaPesos(int[] pesos) {
@@ -76,5 +70,13 @@ public Disciplina(String nomeDisciplina, int nNotas, int[] pesos) {
 	@Override
 	public String toString() {
 		return (this.disciplina + " " + this.horas + " " + mediaNotas(notas, pesos) + " " + Arrays.toString(notas));
+	}
+
+	private int[] retornaPesos(int nNotas) {
+		int[] peso =  new int[nNotas];
+		for (int i = 0; i < nNotas; i++) {
+			pesos[i] = 1;
+		}
+		return peso;
 	}
 }
