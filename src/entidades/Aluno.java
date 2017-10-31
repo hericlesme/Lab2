@@ -3,8 +3,11 @@ import java.util.ArrayList;
 
 public class Aluno {
 
-	// Atributos
-
+	/** Atributos
+	 * 
+	 */
+	
+	private String nomeAluno;
 	private ArrayList<ContaLaboratorio> contaLab;
 	private ArrayList<Disciplina> disciplinas;
 	private ArrayList<ContaCantina> contaCantina;
@@ -12,7 +15,8 @@ public class Aluno {
 
 	// Construtores
 
-	public Aluno() {
+	public Aluno(String nomeAluno) {
+		this.nomeAluno = nomeAluno;
 		this.contaLab = new ArrayList<ContaLaboratorio>();
 		this.disciplinas = new ArrayList<Disciplina>();
 		this.contaCantina = new ArrayList<ContaCantina>();
@@ -30,7 +34,7 @@ public class Aluno {
 				lab = contaLab.get(i);
 			}
 		}
-		return (lab);
+		return lab;
 	}
 	// Disciplinas
 
@@ -41,10 +45,10 @@ public class Aluno {
 				disc = disciplinas.get(i);
 			}
 		}
-		return (disc);
+		return disc;
 	}
 	// Cantinas
-
+	
 	private ContaCantina searchCantina(String nomeDaCantina) {
 		ContaCantina cantina = null;
 		for (int i = 0; i < contaCantina.size(); i++) {
@@ -52,11 +56,12 @@ public class Aluno {
 				cantina = contaCantina.get(i);
 			}
 		}
-		return (cantina);
+		return cantina;
 	}
 
 	// Métodos
-
+	
+	
 	// Laboratório
 
 	public void cadastraLaboratorio(String nomeLaboratorio) {
@@ -78,7 +83,7 @@ public class Aluno {
 	}
 
 	public boolean atingiuCota(String nomeLaboratorio) {
-		return (searchLab(nomeLaboratorio).atingiuCota());
+		return searchLab(nomeLaboratorio).atingiuCota();
 	}
 
 	public String laboratorioToString(String nomeLaboratorio) {
@@ -110,11 +115,11 @@ public class Aluno {
 	}
 
 	public boolean aprovado(String nomeDisciplina) {
-		return (searchDisc(nomeDisciplina).aprovado());
+		return searchDisc(nomeDisciplina).aprovado();
 	}
 
 	public String disciplinaToString(String nomeDisciplina) {
-		return (searchDisc(nomeDisciplina).toString());
+		return searchDisc(nomeDisciplina).toString();
 	}
 
 	// Cantina
@@ -137,11 +142,11 @@ public class Aluno {
 	}
 
 	public String cantinaToString(String nomeDaCantina) {
-		return (searchCantina(nomeDaCantina).toString());
+		return searchCantina(nomeDaCantina).toString();
 	}
 	
 	public String listarDetalhes(String nomeDaCantina) {
-		return (searchCantina(nomeDaCantina).listarDetalhes());
+		return searchCantina(nomeDaCantina).listarDetalhes();
 	}
 
 	// Saúde
@@ -159,7 +164,10 @@ public class Aluno {
 	}
 	
 	public String geral() {
-		return (saude.geral());
+		return saude.geral();
 	}
-
+	
+	public String getName() {
+		return this.nomeAluno;
+	}
 }

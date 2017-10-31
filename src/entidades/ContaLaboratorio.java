@@ -43,7 +43,7 @@ public class ContaLaboratorio {
 
 	@Override
 	public String toString() {
-		return (this.nomeDoLaboratorio + " " + this.dados + "/" + this.cota);
+		return this.nomeDoLaboratorio + " " + this.dados + "/" + this.cota;
 	}
 
 }

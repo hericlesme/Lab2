@@ -62,7 +62,7 @@ public class Disciplina {
 	}
 
 	public boolean aprovado() {
-		return (mediaNotas() >= 7.0);
+		return mediaNotas() >= 7.0;
 	}
 
 	public String getDisc() {
