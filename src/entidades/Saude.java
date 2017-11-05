@@ -59,9 +59,7 @@ public class Saude {
 
 	/**
 	 * Retorna em String a representação do resultado geral da saúde do usuário com
-	 * base na saúde Física e Mental. Se forem diferentes, o resultado retornado
-	 * será "ok", caso contrário, o valor retornado é igual ao valor das mesmas. O
-	 * emoji, caso definido, também é representado.
+	 * base na saúde Física e Mental. O emoji, caso definido, também é representado.
 	 * 
 	 * @return String que representa saúde geral e emoji registrados.
 	 */

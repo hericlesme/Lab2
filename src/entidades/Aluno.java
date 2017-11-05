@@ -4,14 +4,12 @@ import java.util.ArrayList;
 
 /**
  * Representação de um aluno. O aluno pode ter um conjunto de contas no
- * laboratorio, disciplinas, contas na cantina, e seu estado saúde. Todo aluno
- * precisa ter um nome e é unicamente identificado por esse nome.
+ * laboratorio, disciplinas, contas na cantina, e seu estado saúde.
  * 
  * @author Héricles Emanuel - 117110647
  */
 public class Aluno {
-
-	private String nomeAluno;
+	
 	private ArrayList<ContaLaboratorio> contaLab;
 	private ArrayList<Disciplina> disciplinas;
 	private ArrayList<ContaCantina> contaCantina;
@@ -22,11 +20,8 @@ public class Aluno {
 	 * seja adicionado algum objeto. A saúde tem os valores padrões do objeto
 	 * construído.
 	 * 
-	 * @param nomeAluno
-	 *            O nome do aluno.
 	 */
-	public Aluno(String nomeAluno) {
-		this.nomeAluno = nomeAluno;
+	public Aluno() {
 		this.contaLab = new ArrayList<ContaLaboratorio>();
 		this.disciplinas = new ArrayList<Disciplina>();
 		this.contaCantina = new ArrayList<ContaCantina>();
@@ -34,8 +29,7 @@ public class Aluno {
 	}
 
 	/**
-	 * Método que procura uma conta de laboratório na lista tal objeto pelo seu
-	 * nome.
+	 * Procura uma conta de laboratório na lista pelo seu nome.
 	 * 
 	 * @param nomeLaboratorio
 	 *            String que representa o nome da conta de laboratório a ser
@@ -53,7 +47,7 @@ public class Aluno {
 	}
 
 	/**
-	 * Método que procura uma Disciplina na lista tal objeto pelo seu nome.
+	 * Procura uma Disciplina na lista pelo seu nome.
 	 * 
 	 * @param nomeDisciplina
 	 *            String que representa o nome da Disciplina a ser encontrada.
@@ -70,7 +64,7 @@ public class Aluno {
 	}
 
 	/**
-	 * Método que procura uma conta de cantina na lista tal objeto pelo seu nome.
+	 * Procura uma conta de cantina na lista pelo seu nome.
 	 * 
 	 * @param nomeDaCantinna
 	 *            String que representa o nome da conta de Cantina a ser encontrada.
@@ -87,8 +81,8 @@ public class Aluno {
 	}
 
 	/**
-	 * Chama o construtor do objeto do tipo ContaLaboratório, inicializa e o
-	 * adiciona à lista de objetos do mesmo tipo.
+	 * Chama o construtor de ContaLaboratório, inicializa e o adiciona à lista de
+	 * objetos do mesmo tipo.
 	 * 
 	 * @param nomeLaboratorio
 	 *            Nome da conta do laboratorio a ser criada.
@@ -99,8 +93,8 @@ public class Aluno {
 	}
 
 	/**
-	 * Chama o construtor do objeto do tipo ContaLaboratório, inicializa e o
-	 * adiciona à lista de objetos do mesmo tipo.
+	 * Chama o construtor de ContaLaboratório, inicializa e o adiciona à lista de
+	 * objetos do mesmo tipo.
 	 * 
 	 * @param nomeLaboratorio
 	 *            Nome da conta do Laboratorio a ser criada.
@@ -113,8 +107,7 @@ public class Aluno {
 	}
 
 	/**
-	 * Invoca o método da classe ContaLaboratório que consome espaço adicionando
-	 * dados à conta.
+	 * Consome espaço adicionando dados à conta.
 	 * 
 	 * @param nomeLaboratorio
 	 *            Nome da conta do laboratório.
@@ -126,8 +119,7 @@ public class Aluno {
 	}
 
 	/**
-	 * Invoca o método da classe ContaLaboratório que libera espaço removendo dados
-	 * à conta.
+	 * Libera espaço removendo dados à conta.
 	 * 
 	 * @param nomeLaboratorio
 	 *            Nome da conta do laboratório.
@@ -139,44 +131,39 @@ public class Aluno {
 	}
 
 	/**
-	 * Invoca método da classe ContaLaboratório que indica se o limite de dados foi
-	 * atingido ou não.
+	 * Indica se o limite de dados foi atingido ou não.
 	 * 
 	 * @param nomeLaboratorio
 	 *            Nome da conta do Laboratório
-	 * @return O retorno do método. Valor booleano, que mostra se o limite foi
-	 *         atingido (true), ou não (false).
+	 * @return Valor booleano, que mostra se o limite foi atingido.
 	 */
 	public boolean atingiuCota(String nomeLaboratorio) {
 		return searchLab(nomeLaboratorio).atingiuCota();
 	}
 
 	/**
-	 * Invoca o método da classe ContaLaboratório que retorna a String que
-	 * representa a conta de laboratorio. A representação segue o formato: “Nome do
-	 * laboratorio - dados/cota” (em Megabytes).
+	 * Retorna a String que representa a conta de laboratorio. A representação segue
+	 * o formato: “Nome do laboratorio - dados/cota” (em Megabytes).
 	 * 
 	 * @param nomeLaboratorio
 	 *            Nome da conta do Laboratório
-	 * @return O retorno do método. A representação em String de uma conta de
-	 *          laboratorio.
+	 * @return A representação em String de uma conta de laboratorio.
 	 */
 	public String laboratorioToString(String nomeLaboratorio) {
 		return searchLab(nomeLaboratorio).toString();
 	}
 
 	/**
-	 * Invoca o método da classe ContaLaboratório que retorna a String que
-	 * representa a conta de laboratorio. A representação segue o formato: “Nome do
-	 * laboratorio - dados/cota” (em Megabytes).
+	 * Retorna a String que representa a conta de laboratorio. A representação segue
+	 * o formato: “Nome do laboratorio - dados/cota” (em Megabytes).
 	 *
 	 * @returns O retorno do método. A representação em String de uma conta de
 	 *          laboratorio.
 	 */
 
 	/**
-	 * Chama o construtor do objeto do tipo Disciplina, inicializa e o adiciona à
-	 * lista de objetos do mesmo tipo.
+	 * Chama o construtor da Disciplina, inicializa e o adiciona à lista de objetos
+	 * do mesmo tipo.
 	 * 
 	 * @param nomeDisciplina
 	 *            Nome da Disciplina.
@@ -186,8 +173,8 @@ public class Aluno {
 	}
 
 	/**
-	 * Chama o construtor do objeto do tipo Disciplina, inicializa e o adiciona à
-	 * lista de objetos do mesmo tipo.
+	 * Chama o construtor da Disciplina, inicializa e o adiciona à lista de objetos
+	 * do mesmo tipo.
 	 * 
 	 * @param nomeDisciplina
 	 *            Nome da Disciplina.
@@ -200,8 +187,8 @@ public class Aluno {
 	}
 
 	/**
-	 * Chama o construtor do objeto do tipo Disciplina, inicializa e o adiciona à
-	 * lista de objetos do mesmo tipo.
+	 * Chama o construtor da Disciplina, inicializa e o adiciona à lista de objetos
+	 * do mesmo tipo.
 	 * 
 	 * @param nomeDisciplina
 	 *            Nome da Disciplina.
@@ -216,8 +203,7 @@ public class Aluno {
 	}
 
 	/**
-	 * Invoca o método da classe Disciplina que cadastra o número de horas de estudo
-	 * somando ao total de horas estudadas.
+	 * Cadastra o número de horas de estudo somando ao total de horas estudadas.
 	 * 
 	 * @param nomeDisciplina
 	 *            Nome do objeto do tipo Disciplina a ser utilizado.
@@ -229,7 +215,7 @@ public class Aluno {
 	}
 
 	/**
-	 * Invoca o método da classe Disciplina que cadastra as notas da disciplina.
+	 * Cadastra as notas da disciplina.
 	 * 
 	 * @param nomeDisciplina
 	 *            Nome do objeto do tipo Disciplina a ser utilizado.
@@ -243,35 +229,33 @@ public class Aluno {
 	}
 
 	/**
-	 * Invoca o método da classe Disciplina que Verifica se o aluno está aprovado,
-	 * com média maior que 7.
+	 * Verifica se o aluno está aprovado, com média maior que 7.
 	 * 
 	 * @param nomeDisciplina
 	 *            Nome do objeto do tipo Disciplina a ser utilizado.
 	 * 
-	 * @return O retorno do método. Boolean indicando a aprovaçao do aluno.
+	 * @return Boolean indicando a aprovaçao do aluno.
 	 */
 	public boolean aprovado(String nomeDisciplina) {
 		return searchDisc(nomeDisciplina).aprovado();
 	}
 
 	/**
-	 * Invoca o método da classe Disciplina que retorna a String que representa a
-	 * disciplina. A representação segue o formato: “Nome da disciplina - horas de
-	 * estudo - media - array de notas”.
+	 * Retorna a String que representa a disciplina. A representação segue o
+	 * formato: “Nome da disciplina - horas de estudo - media - array de notas”.
 	 *
 	 * @param nomeDisciplina
 	 *            Nome do objeto do tipo Disciplina a ser utilizado.
 	 *
-	 * @return o retorno do método. A representação em String de uma disciplina.
+	 * @return A representação em String de uma disciplina.
 	 */
 	public String disciplinaToString(String nomeDisciplina) {
 		return searchDisc(nomeDisciplina).toString();
 	}
 
 	/**
-	 * Chama o construtor do objeto do tipo ContaCantina, inicializa e o adiciona à
-	 * lista de objetos do mesmo tipo.
+	 * Chama o construtor de ContaCantina, inicializa e o adiciona à lista de
+	 * objetos do mesmo tipo.
 	 * 
 	 * @param nomeDaCantina
 	 *            Nome da Cantina.
@@ -282,9 +266,8 @@ public class Aluno {
 	}
 
 	/**
-	 * Invoca o método da classe ContaCantina que cadastra o lanche, incrementando a
-	 * quantidade de itens adquiridos, e seu valor em centavos a ser incrementado no
-	 * débito.
+	 * Cadastra o lanche, incrementando a quantidade de itens adquiridos, e seu
+	 * valor em centavos a ser incrementado no débito.
 	 * 
 	 * @param nomeDaCantina
 	 *            Nome do objeto do tipo ContaCantina a utilizado.
@@ -316,8 +299,8 @@ public class Aluno {
 	}
 
 	/**
-	 * Invoca o método da classe ContaCantina que altera o débito, reduzindo-o
-	 * conforme o valor em centavos passado como parâmetro.
+	 * Altera o débito, reduzindo-o conforme o valor em centavos passado como
+	 * parâmetro.
 	 * 
 	 * @param nomeDaCantina
 	 *            Nome do objeto do tipo ContaCantina a utilizado.
@@ -328,36 +311,33 @@ public class Aluno {
 	}
 
 	/**
-	 * Invoca o método da classe ContaCantina que retorna a String que representa a
-	 * conta de catinia. A representação segue o formato: “Nome da cantina -
-	 * quantidade de lanches - débito”.
+	 * Retorna a String que representa a conta de catinia. A representação segue o
+	 * formato: “Nome da cantina - quantidade de lanches - débito”.
 	 * 
 	 * @param nomeDaCantina
 	 *            Nome do objeto do tipo ContaCantina a utilizado.
 	 * 
-	 * @return O retorno do método. representação em String de uma conta de
-	 *          cantina.
+	 * @return Representação em String de uma conta de cantina.
 	 */
 	public String cantinaToString(String nomeDaCantina) {
 		return searchCantina(nomeDaCantina).toString();
 	}
 
 	/**
-	 * Invoca o método da classe ContaCantinan que lista os últimos cinco detalhes,
-	 * no máximo, se forem informados no cadastro do lanche.
+	 * Lista os últimos cinco detalhes, no máximo, se forem informados no cadastro
+	 * do lanche.
 	 * 
 	 * @param nomeDaCantina
 	 *            Nome do objeto do tipo ContaCantina a utilizado.
-	 * @return O retorno do método. String que representa os detalhes descritos no
-	 *         cadastro do lanche.
+	 * @return String que representa os detalhes descritos no cadastro do lanche.
 	 */
 	public String listarDetalhes(String nomeDaCantina) {
 		return searchCantina(nomeDaCantina).listarDetalhes();
 	}
 
 	/**
-	 * Invoca o método da classe Saude que altera o estado de saúde mental. Se
-	 * houver emoji definido, e ocorrer alguma alteração mental, o emoji é resetado.
+	 * Altera o estado de saúde mental. Se houver emoji definido, e ocorrer alguma
+	 * alteração mental, o emoji é resetado.
 	 * 
 	 * @param valor
 	 *            String que representa o estado da saude mental.
@@ -367,7 +347,7 @@ public class Aluno {
 	}
 
 	/**
-	 * Invoca o método da classe Saude que altera o estado de saúde física.
+	 * Altera o estado de saúde física.
 	 * 
 	 * @param valor
 	 *            String que representa o estado da saude físsica.
@@ -377,8 +357,7 @@ public class Aluno {
 	}
 
 	/**
-	 * Invoca o método da classe Saude que define um emoji, representado em String
-	 * para a última sensação registrada.
+	 * Define um emoji, representado em String para a última sensação registrada.
 	 * 
 	 * @param emoji
 	 *            String que representa a última sensação em forma de emoji.
@@ -388,25 +367,12 @@ public class Aluno {
 	}
 
 	/**
-	 * Invoca o método da classe Saude que retorna em String a representação do
-	 * resultado geral da saúde do usuário com base na saúde Física e Mental. Se
-	 * forem diferentes, o resultado retornado será "ok", caso contrário, o valor
-	 * retornado é igual ao valor das mesmas. O emoji, caso definido, também é
-	 * representado.
+	 * Retorna em String a representação do resultado geral da saúde do usuário com
+	 * base na saúde Física e Mental. O emoji, caso definido, também é representado.
 	 * 
-	 * @return O retorno do método. String que representa saúde geral e emoji
-	 *         registrados.
+	 * @return String que representa saúde geral e emoji registrados.
 	 */
 	public String geral() {
 		return saude.geral();
-	}
-
-	/**
-	 * Método get para o nome do Aluno.
-	 * 
-	 * @return String que representa o nome do Aluno.
-	 */
-	public String getName() {
-		return this.nomeAluno;
 	}
 }

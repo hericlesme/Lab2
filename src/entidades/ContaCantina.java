@@ -100,7 +100,7 @@ public class ContaCantina {
 	}
 
 	/**
-	 * Retorna a String que representa a conta de catinia. A representação segue o
+	 * Retorna a String que representa a conta de cantina. A representação segue o
 	 * formato: “Nome da cantina - quantidade de lanches - débito”.
 	 *
 	 * @return a representação em String de uma conta de cantina.
